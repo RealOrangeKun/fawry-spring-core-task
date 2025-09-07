@@ -1,17 +1,16 @@
 package fawry.task.demo;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
 import fawry.task.demo.config.AppConfig;
 import fawry.task.demo.models.Employee;
 import fawry.task.demo.services.EmployeeService;
 
-@SpringBootApplication
 public class DemoApplication {
 
     public static void main(String[] args) {
-        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
+        try (AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
             EmployeeService service = context.getBean(EmployeeService.class);
 
             Employee e1 = new Employee("Alice", "Engineer");
