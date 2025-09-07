@@ -15,7 +15,6 @@ public class DemoApplication {
 
             Employee e1 = new Employee("Alice", "Engineer");
             Employee e2 = new Employee("Bob", "Manager");
-            System.err.println("Hello, World!");
             service.create(e1);
             service.create(e2);
 
