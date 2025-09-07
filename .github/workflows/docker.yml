@@ -1,0 +1,16 @@
+name: Run with Dockerfile
+
+on: [push]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t my-app .
+
+      - name: Run container
+        run: docker run --rm my-app
